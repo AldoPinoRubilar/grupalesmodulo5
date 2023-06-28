@@ -39,7 +39,7 @@ public class ServletLogout extends HttpServlet {
 			session.invalidate(); // cerrar la session
 		}
 
-		response.sendRedirect("home.jsp");
+		response.sendRedirect("login.jsp");
 	}
 
 }

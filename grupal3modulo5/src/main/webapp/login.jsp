@@ -11,7 +11,6 @@
 	</head>
 
 	<body>
-
 		<section class="w-full px-8 text-gray-700 bg-white">
 			<div
 				class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl justify-center">
@@ -43,9 +42,11 @@
 											for="grid-user-name">
 											Nombre de Usuario
 										</label>
-										<input name="nombreUsuario" class="appearance-none block w-full md:w-3/4 bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 
-				  leading-tight focus:outline-none focus:bg-white" id="grid-user-name" type="text" placeholder="Cosme Fulanito">
-										<p class="text-red-500 text-xs italic">Por favor, ingrese nombre de usuario.</p>
+										<input name="nombreUsuario" class="appearance-none block w-full md:w-3/4 bg-gray-200 text-gray-700 
+										border border-red-500 rounded py-3 px-4 mb-3 
+				  leading-tight focus:outline-none focus:bg-white" id="nombreUsuario" type="text" placeholder="Cosme Fulanito">
+										<p id="mensajeErrorUsuarioVacio" class="hidden text-red-500 text-xs italic">Por favor, ingrese nombre de usuario.</p>
+										
 									</div>
 									<div class="mb-6">
 										<label
@@ -53,9 +54,9 @@
 											for="grid-password">
 											Clave
 										</label>
-										<input name="claveUsuario" class="appearance-none block w-full md:w-3/4 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight 
-				  focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="****">
-										<p class="text-red-500 text-xs italic">Por favor, ingrese la clave.</p>
+										<input name="claveUsuario" class="appearance-none block w-full md:w-3/4 bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight 
+				  focus:outline-none focus:bg-white focus:border-gray-500" id="claveUsuario" type="password" placeholder="****">
+										<p id="mensajeErrorClaveVacia" class="hidden text-red-500 text-xs italic">Por favor, ingrese la clave.</p>
 									</div>
 									<div class="flex items-center w-full">
 										<button
@@ -64,7 +65,7 @@
 											Iniciar Sesion
 										</button>
 									</div>
-									<p class="text-red-500 text-xs-bold italic">Datos incorrectos, intente nuevamente.
+									<p class="hidden text-red-500 text-xs-bold italic">Datos incorrectos, intente nuevamente.
 									</p>
 								</form>
 							</div>
@@ -73,21 +74,20 @@
 							<div class="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl"
 								data-aos="fade-left" data-aos-duration="2000">
 								<img
-									src="https://images.unsplash.com/photo-1498049860654-af1a5c566876?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+									src="https://i.postimg.cc/gkR2SH03/imgLogin.jpg">
 							</div>
 						</div>
 					</div>
 				</div>
 
 		</div>
-		<a href="index.jsp"
+		<a href="#"
 			class="flex items-center font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
 			<span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span
 					class="text-indigo-600"> GRUPO 3</span></span>
 		</a>
-		<script src="script.js"></script>
+		<script src="js/script.js"></script>
 		<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-
-	</body>
+		</body>
 
 </html>
