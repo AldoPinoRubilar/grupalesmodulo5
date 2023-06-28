@@ -1,4 +1,4 @@
-package cl.awakelab.grupal2modulo5.controllers.servlets;
+package grupal2modulo5.controller.servlets;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author Aldo Pino, Sebastian Hernandez, Freddy Yevenes, Nestor Leyton Servlet
- *         implementation class ServletContacto
+ *         implementation class ServletCapacitacion
  */
-@WebServlet("/ServletContacto")
-public class ServletContacto extends HttpServlet {
+@WebServlet("/ServletListarCapacitacion")
+public class ServletListarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ServletContacto() {
+	public ServletListarCapacitacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -41,12 +41,20 @@ public class ServletContacto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nombreContacto = request.getParameter("nombreContacto");
-		String telefonoContacto = request.getParameter("telefonoContacto");
-		String correoContacto = request.getParameter("correoContacto");
-		String mensajeContacto = request.getParameter("mensajeContacto");
 
-		System.out.println(nombreContacto + " " + telefonoContacto + " " + correoContacto + "\n" + mensajeContacto);
+		String nombreCapacitacion = request.getParameter("nombreCapacitacion");
+		String idCapacitacion = request.getParameter("idCapacitacion");
+		String diaCapacitacion = request.getParameter("diaCapacitacion");
+		String horaCapacitacion = request.getParameter("horaCapacitacion");
+		String lugarCapacitacion = request.getParameter("lugarCapacitacion");
+		String duracionCapacitacion = request.getParameter("duracionCapacitacion");
+		String cantidadAsistentes = request.getParameter("cantidadAsistentes");
+		String observacionesCapacitacion = request.getParameter("observacionesCapacitacion");
+
+		System.out.println(nombreCapacitacion + " " + idCapacitacion + " " + diaCapacitacion + horaCapacitacion + " "
+				+ lugarCapacitacion + " " + duracionCapacitacion + " " + cantidadAsistentes + "\n"
+				+ observacionesCapacitacion);
+
 	}
 
 }
