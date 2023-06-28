@@ -2,7 +2,6 @@ package cl.awakelab.grupal2modulo5.controllers.servlets;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,14 +26,14 @@ public class ServletAuth extends HttpServlet {
 		String usuario = request.getParameter("nombreUsuario");
 		String password = request.getParameter("claveUsuario");
 
-		RequestDispatcher requestDispatcher;
+		// RequestDispatcher requestDispatcher;
 
 		if (usuario.equals("admin") && password.equals("1234")) {
 			HttpSession session = request.getSession();
 
 			session.setAttribute("usuario", usuario); // le acabo de añadir un atributo adicional a la session que es el
 														// nombre usuario
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("contactoCliente.jsp");
 			// requestDispatcher = request.getRequestDispatcher("home.jsp");
 
 		} else {

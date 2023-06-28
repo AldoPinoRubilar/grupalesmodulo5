@@ -26,7 +26,7 @@ public class ServletIndex extends HttpServlet {
 			for (Cookie cookie : cookies) {
 
 				if (cookie.getName().equals("credenciales")) {
-					response.sendRedirect("index.jsp");
+					response.sendRedirect("login.jsp");
 					return;
 				}
 			}
