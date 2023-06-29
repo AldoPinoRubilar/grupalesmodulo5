@@ -31,6 +31,7 @@ public class ServletAuth extends HttpServlet {
 
 		LoginUserController loginUserController = new LoginUserController();
 		String username = request.getParameter("username");
+		// String username = request.getParameter("usuario");
 		String password = request.getParameter("password");
 		// System.out.println(username);
 		String result = loginUserController.login(username, password);
