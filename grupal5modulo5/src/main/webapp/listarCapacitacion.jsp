@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html>
-
-    <head>
+ <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Listado de Capacitaciones | GRUPO 3</title>
@@ -30,8 +29,9 @@
                             class="flex flex-wrap items-center mb-1 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200 text-center">
                             <div class="container mx-auto flex flex-wrap items-center justify-between">
 
-                                <button data-collapse-toggle="mobile-menu" type="button" class="md:hidden ml-1 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-lg inline-flex 
-            items-center justify-center" aria-controls="mobile-menu-2" aria-expanded="false">
+                                <button data-collapse-toggle="mobile-menu" type="button"
+                                    class="md:hidden ml-1 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-lg inline-flex items-center justify-center"
+                                    aria-controls="mobile-menu-2" aria-expanded="false">
                                     <span class="sr-only">Main Menu</span>
                                     <spann class="mr-12 text-black text-bold">Menu</spann>
                                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"
@@ -52,14 +52,10 @@
                                 <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
                                     <ul
                                         class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+
                                         <li>
-                                            <a href="home.jsp" class="bg-indigo-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-indigo-700 md:p-0 
-                rounded focus:outline-none" aria-current="page">Inicio</a>
-                                        </li>
-                                        <li>
-                                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-gray-700 hover:bg-gray-50 
-                    border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 
-                    font-medium flex items-center justify-between w-full md:w-auto">Listar
+                                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                                                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Listar
                                                 <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd"
@@ -81,9 +77,7 @@
                                         </li>
                                         <li>
                                             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1"
-                                                class="text-gray-700 hover:bg-gray-50 
-                    border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 
-                    font-medium flex items-center justify-between w-full md:w-auto">Crear
+                                                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Crear
                                                 <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd"
@@ -105,9 +99,7 @@
                                         </li>
                                         <li>
                                             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2"
-                                                class="text-gray-700 hover:bg-gray-50 
-                    border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 
-                    font-medium flex items-center justify-between w-full md:w-auto">Gest/Admin
+                                                class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Gest/Admin
                                                 <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd"
@@ -128,21 +120,36 @@
                                                 </ul>
                                         </li>
                                         <li>
-                                            <a href="contactoCliente.jsp" onclick="scrollToBottom(event)" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                                            <a href="contactoCliente.jsp" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
                 block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Contacto</a>
                                         </li>
                                         <li>
-                                            <a href="home.jsp#acercaDe" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
-                block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Acerca de</a>
-                                        </li>
+                                            <a href="#acercaDe" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0" style="white-space: nowrap;">Acerca de</a>
+                                        </li>                       
+<li>
+    <span class="uppercase text-bold text-indigo-700 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                block pl-3 pr-4 py-2 md:p-0" style="white-space: nowrap;">
+        <c:if test="${not empty sessionScope.usuario}">${sessionScope.usuario}</c:if>
+    </span>
+</li>
+                                       <li>
+    <form action="ServletLogout" method="post">
+        <button type="submit" class="text-red-600 rounded-md 
+                                                 hover:text-red-400
+                                                 block pl-3 pr-4 py-2 md:p-0 w-full h-full" style="white-space: nowrap;">Cerrar sesión
+        </button>
+    </form>                                 
+</li>
                                     </ul>
                                 </div>
                             </div>
                         </nav>
                     </div>
         </section>
+
         <!--section 2-->
-        <section class="w-full bg-white flex justify-center">
+        <section class="w-full bg-white flex justify-center mt-10">
             <div class="max-w-3xl mx-auto px-0 py-6 justify-center">
                 <div class="text-center mb-16 ">
 
@@ -152,8 +159,8 @@
                 </div>
                 <div class="pt-4 px-0 flex justify-center">
                     <table
-                        class="w-full mx-auto striped sm:border sm:border-slate-200 sm:dark:border-slate-800 dark:border-slate-700">
-                        <caption class="caption-bottom text-[11px] mb-2">Tabla con informacion sobre las capacitaciones.
+                        class="w-full mx-auto striped sm:border sm:border-slate-200 sm:dark:border-slate-800 mt-1 mb-20 dark:border-slate-700">
+                        <caption class="caption-bottom text-[11px] mt-4 mb-2">Tabla con informacion sobre las capacitaciones.
                         </caption>
                         <thead class="hidden border-0 sm:table-header-group">
                             <tr>
@@ -183,7 +190,7 @@
                                     Observaciones</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-200 bg-white dark:divide-slate-800 dark:bg-transparent">
+                        <tbody class="divide-y divide-indigo-200 bg-white dark:divide-slate-800 dark:bg-transparent">
                             <tr
                                 class="text-sm border border-slate-200 flex flex-col mb-6 py-1 divide-y divide-y-slate-50 dark:border-slate-800 sm:border-0 sm:table-row sm:mb-0 sm:py-0 dark:divide-slate-800 sm:divide-none">
                                 <td data-label="Nombre Capacitacion"
@@ -256,7 +263,7 @@
 
         </section>
         <a href="home.jsp"
-            class="flex items-center font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
+            class="flex items-center font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center mb-0 md:mb-0">
             <span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span
                     class="text-indigo-600"> GRUPO 3</span></span>
         </a>
@@ -264,4 +271,5 @@
         <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
     </body>
 
+    </html>
     </html>

@@ -19,12 +19,25 @@
 		      <form class="fondo-form" id="form-login">
 		        <div class="mb-3">
 		          <label for="user" class="form-label">Usuario</label>
-		          <input type="text" class="form-control" id="user"	name="usuario"/>
+		          <input
+		            type="text"
+		            class="form-control"
+		            id="user"
+		        		name="usuario"
+		        		required
+		          />
 		        </div>
 		
 		        <div class="mb-3">
 		          <label for="password" class="form-label">Ingrese su contraseña</label>
-		          <input type="password" class="form-control" id="password" name="password"/>
+		          <input
+		            type="password"
+		            class="form-control"
+		            id="password"
+		            name="password"
+		            required
+		          />
+		    
 		        </div>
 		        
 		        <div class="d-grid gap-2">

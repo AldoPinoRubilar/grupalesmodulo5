@@ -3,8 +3,8 @@ package test;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import grupal4modulo5.conexion.DBConnection;
-import grupal4modulo5.models.entitys.User;
+import grupal5modulo5.conexion.DBConnection;
+import grupal5modulo5.models.entitys.LoginUser;
 
 public class DBTestConnection {
 
@@ -16,11 +16,11 @@ public class DBTestConnection {
 
 	public static void main(String[] args) {
 		new DBTestConnection();
-		findAllLogin();
+		findAllLoginUser();
 
 	}
 
-	public static void findAllLogin() {
+	public static void findAllLoginUser() {
 
 		String sql = "SELECT * FROM usuariosconlogueo";
 
@@ -30,11 +30,11 @@ public class DBTestConnection {
 
 			while (resultSet.next()) {
 				// String run = resultSet.getString("run");
-				String loginuser = resultSet.getString("nombreusuario");
-				String clave = resultSet.getString("clave");
+				String nombreUsuario = resultSet.getString("username");
+				String clave = resultSet.getString("password");
 
-				User user = new User(loginuser, clave);
-				System.out.println(user.toString());
+				LoginUser loginuser = new LoginUser(nombreUsuario, clave);
+				System.out.println(loginuser.toString());
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
