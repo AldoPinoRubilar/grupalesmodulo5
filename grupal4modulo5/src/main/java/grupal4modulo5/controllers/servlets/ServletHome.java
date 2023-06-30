@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletHome
+ * @author Aldo Pino, Sebastian Hernandez, Freddy Yevenes, Nestor Leyton Servlet
+ *         implementation class ServletHome
  */
+
 @WebServlet("/ServletHome")
 public class ServletHome extends HttpServlet {
 	private static final long serialVersionUID = 1L;

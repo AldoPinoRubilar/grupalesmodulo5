@@ -17,17 +17,15 @@
         AOS.init();
     </script>
     <!-- Section 1 -->
-            <section class="w-full px-8 text-gray-700 bg-white">
-        <div
-            class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl justify-center">
+ <section id="navBarCompleto" class="w-full px-8 text-gray-700 bg-white bg-gradient-to-tl from-indigo-100 to-white">
+        <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl justify-center">
             <div class="relative flex flex-col md:flex-row">
-                <a href="#_"
+                <a href="home.jsp"
                     class="flex items-center mb-9 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
                     <span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span
                             class="text-indigo-600"> GRUPO 3</span></span>
                 </a>
                 <div class="max-w-2xl mb-1">
-
                     <nav
                         class="flex flex-wrap items-center mb-1 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200 text-center">
                         <div class="container mx-auto flex flex-wrap items-center justify-between">
@@ -57,8 +55,10 @@
                                     class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
 
                                     <li>
-                                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Listar
+                                        <button id="dropdownNavbarLink" name="menuListar"
+                                            data-dropdown-toggle="dropdownNavbar"
+                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700
+                                             md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Listar
                                             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"
@@ -72,15 +72,41 @@
                                             class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
                                             <ul class="py-1" aria-labelledby="dropdownLargeButton">
                                                 <li>
-                                                    <a href="listarCapacitacion.jsp"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Listar
-                                                        Capacitaciones</a>
+                                                    <a href="#" name="listarCapacitacion"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Asesorias
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="listarCapacitacion.jsp" name="listarCapacitacion"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Capacitaciones
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" name="listarCapacitacion"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Pagos
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="listarUsuarios.jsp" name="listarCapacitacion"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Usuarios
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" name="listarCapacitacion"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Visitas
+                                                    </a>
                                                 </li>
                                             </ul>
                                     </li>
                                     <li>
                                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1"
-                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Crear
+                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 
+                                            font-medium flex items-center justify-between w-full md:w-auto">Crear
                                             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"
@@ -94,9 +120,34 @@
                                             class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
                                             <ul class="py-1" aria-labelledby="dropdownLargeButton">
                                                 <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Crear Asesorias
+                                                    </a>
+                                                </li>
+                                                <li>
                                                     <a href="crearCapacitacion.jsp"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Crear
-                                                        Capacitación</a>
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Crear Capacitación
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="crearCapacitacion.jsp"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Crear Capacitación
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Crear Pago
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="crearUsuario.jsp"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Crear Usuario
+                                                    </a>
                                                 </li>
                                             </ul>
                                     </li>
@@ -117,33 +168,70 @@
                                             <ul class="py-1" aria-labelledby="dropdownLargeButton">
                                                 <li>
                                                     <a href="#"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Gestionar
-                                                        Accidente</a>
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Editar Administrativo</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Editar Cliente</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Editar Profesional</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Administrar Asistentes</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Administrar Chequeos</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Gestionar Accidentes</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Reportes</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Responder CheckList</a>
                                                 </li>
                                             </ul>
                                     </li>
                                     <li>
                                         <a href="contactoCliente.jsp" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
-            block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Contacto</a>
+                    block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Contacto</a>
                                     </li>
                                     <li>
                                         <a href="#acercaDe" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
-            block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0" style="white-space: nowrap;">Acerca de</a>
-                                    </li>                       
-<li>
-<span class="uppercase text-bold text-indigo-700 border-b border-gray-100 md:hover:bg-transparent md:border-0 
-            block pl-3 pr-4 py-2 md:p-0" style="white-space: nowrap;">
-    <c:if test="${not empty sessionScope.usuario}">${sessionScope.usuario}</c:if>
-</span>
-</li>
-                                   <li>
-<form action="ServletLogout" method="post">
-    <button type="submit" class="text-red-600 rounded-md 
-                                             hover:text-red-400
-                                             block pl-3 pr-4 py-2 md:p-0 w-full h-full" style="white-space: nowrap;">Cerrar sesión
-    </button>
-</form>                                 
-</li>
+                    block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0" style="white-space: nowrap;">Acerca de</a>
+                                    </li>
+                                    <li>
+                                        <span class="uppercase text-bold text-indigo-700 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                    block pl-3 pr-4 py-2 md:p-0" style="white-space: nowrap;">
+                                            <c:if test="${not empty sessionScope.usuario}">${sessionScope.usuario}
+                                            </c:if>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <form action="ServletLogout" method="post">
+                                            <button type="submit" class="text-red-600 font-semibold rounded-md 
+                                                     hover:text-red-400
+                                                     block pl-3 pr-4 py-2 md:p-0 w-full h-full"
+                                                style="white-space: nowrap;">Cerrar sesión
+                                            </button>
+                                        </form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

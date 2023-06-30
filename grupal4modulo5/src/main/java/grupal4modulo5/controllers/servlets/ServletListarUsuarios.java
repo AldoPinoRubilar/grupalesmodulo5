@@ -10,13 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletHome
+ * @author Aldo Pino, Sebastian Hernandez, Freddy Yevenes, Nestor Leyton Servlet
+ *         implementation class ServletListarUsuarios
  */
-@WebServlet("/ServletListarCapacitacion")
-public class ServletListarCapacitacion extends HttpServlet {
+
+@WebServlet("/ServletListarUsuarios")
+public class ServletListarUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ServletListarCapacitacion() {
+	public ServletListarUsuarios() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -25,7 +27,7 @@ public class ServletListarCapacitacion extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("listarCapacitacion.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("listarUsuarios.jsp");
 		dispatcher.forward(request, response);
 	}
 }
