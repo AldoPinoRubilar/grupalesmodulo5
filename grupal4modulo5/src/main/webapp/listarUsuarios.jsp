@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <!--Section 1-->
-    <section class="w-full px-8 text-gray-700 bg-white bg-gradient-to-tl from-indigo-100 to-white">
+  <!-- Section 1 -->
+     <section id="navBarCompleto" class="w-full px-8 text-gray-700 bg-white bg-gradient-to-tl from-indigo-100 to-white">
         <div
             class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl justify-center">
             <div class="relative flex flex-col md:flex-row">
@@ -26,7 +26,6 @@
                             class="text-indigo-600"> GRUPO 3</span></span>
                 </a>
                 <div class="max-w-2xl mb-1">
-
                     <nav
                         class="flex flex-wrap items-center mb-1 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200 text-center">
                         <div class="container mx-auto flex flex-wrap items-center justify-between">
@@ -54,10 +53,15 @@
                             <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
                                 <ul
                                     class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-
                                     <li>
-                                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Listar
+                                        <a href="home.jsp" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                    block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <button id="dropdownNavbarLink" name="menuListar"
+                                            data-dropdown-toggle="dropdownNavbar"
+                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700
+                                             md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Listar
                                             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"
@@ -70,21 +74,54 @@
                                         <div id="dropdownNavbar"
                                             class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
                                             <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                                                <!--FUNCIONES LISTAR CLIENTE-->
+                                                <c:if test="${sessionScope.usuario=='CLIENTE'}">
+                                                    <li>
+                                                        <a href="listarCapacitacion.jsp" name="listarCapacitacion"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                           Listado de Capacitaciones
+                                                        </a>
+                                                    </li>
+                                                </c:if>
+                                                <!--FIN FUNCIONES LISTAR CLIENTE-->
+                                                <!--FUNCIONES LISTAR PROFESIONAL-->
+                                                <c:if test="${sessionScope.usuario=='PROFESIONAL'}">
                                                 <li>
-                                                    <a href="listarCapacitacion.jsp"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Listar
-                                                        Capacitaciones</a>
+                                                    <a href="sitioEnDesarrollo.jsp" name="listarAsesorias"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Asesorias
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <a href="listarUsusarios.jsp"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Listar
-                                                        Usuarios</a>
+                                                    <a href="sitioEnDesarrollo.jsp" name="listarVisitas"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Visitas
+                                                    </a>
                                                 </li>
+                                                </c:if>
+                                                <!--FIN FUNCIONES LISTAR PROFESIONAL-->
+                                                <!--FUNCIONES LISTAR ADMIN--->
+                                            <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
+                                                <li>
+                                                    <a href="listarUsuarios.jsp" name="listarUsuarios"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Usuarios
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="sitioEnDesarrollo.jsp" name="listarPagos"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                       Listado de Pagos
+                                                    </a>
+                                                </li>
+                                            </c:if>
+                                            <!--FIN FUNCIONES LISTAR ADMIN-->
                                             </ul>
                                     </li>
                                     <li>
                                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1"
-                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Crear
+                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 
+                                            font-medium flex items-center justify-between w-full md:w-auto">Crear
                                             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"
@@ -97,21 +134,49 @@
                                         <div id="dropdownNavbar1"
                                             class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
                                             <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                                                <!--FUNCIONES CREAR 'CLIENTE'-->
+                                                <c:if test="${sessionScope.usuario=='CLIENTE'}">
+                                                    <li>
+                                                        <a href="crearCapacitacion.jsp" name="crearCapacitacion"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Crear Capacitaci√≥n
+                                                        </a>
+                                                    </li>
+                                                </c:if>
+                                                <!--FIN FUNCIONES CREAR 'CLIENTE'-->
+                                                <!--FUNCIONES CREAR 'PROFESIONAL'-->
+                                                <c:if test="${sessionScope.usuario=='PROFESIONAL'}">
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="crearAsesorias"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Crear Asesorias
+                                                        </a>
+                                                    </li>
+                                                </c:if>
+                                                <!--FIN FUNCIONES CREAR 'PROFESIONAL'-->
+                                                <!--FUNCIONES CREAR 'ADMIN'-->
+                                                <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
                                                 <li>
-                                                    <a href="crearCapacitacion.jsp"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Crear
-                                                        CapacitaciÛn</a>
+                                                    <a href="crearUsuario.jsp" name="crearUsuario"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Crear Usuario
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <a href="crearUsuario.jsp"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Crear
-                                                        Usuario</a>
+                                                    <a href="sitioEnDesarrollo.jsp" name="crearPago"
+                                                        class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                        Crear Pago
+                                                    </a>
                                                 </li>
+                                                </c:if>
+                                                <!--FIN FUNCIONES CREAR 'ADMIN'-->
                                             </ul>
                                     </li>
                                     <li>
                                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2"
-                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Gest/Admin
+                                            class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 
+                                            py-2 md:hover:text-indigo-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">
+                                            Gest/Admin
                                             <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"
@@ -124,24 +189,73 @@
                                         <div id="dropdownNavbar2"
                                             class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
                                             <ul class="py-1" aria-labelledby="dropdownLargeButton">
-                                                <li>
-                                                    <a href="#"
-                                                        class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Gestionar
-                                                        Accidente</a>
-                                                </li>
+                                                <!--FUNCIONES GEST/ADMIN 'CLIENTE'-->
+                                                <c:if test="${sessionScope.usuario=='CLIENTE'}">
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="adminAsistentes"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Administrar Asistentes</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="gestAccidentes"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Gestionar Accidentes</a>
+                                                    </li>
+                                                </c:if>
+                                                <!--FIN FUNCIONES GEST/ADMIN 'CLIENTE'-->
+                                                <!--FUNCIONES GEST/ADMIN 'PROFESIONAL'-->
+                                                <c:if test="${sessionScope.usuario=='PROFESIONAL'}">
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="responderCheckList"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Responder CheckList</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="reportes"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Reportes</a>
+                                                    </li>
+                                                </c:if>
+                                                <!--FIN FUNCIONES GEST/ADMIN 'PROFESIONAL'-->
+                                                <!--FUNCIONES GEST/ADMIN 'ADMIN'-->
+                                                <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="editarAdministrativo"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Editar Administrativo</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="editarCliente"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Editar Cliente</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="editarProfesional"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Editar Profesional</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="sitioEnDesarrollo.jsp" name="adminChequeos"
+                                                            class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
+                                                            Administrar Chequeos</a>
+                                                    </li>
+                                                </c:if>
+                                            <!--FIN FUNCIONES GEST/ADMIN 'ADMIN'-->
                                             </ul>
                                     </li>
-                                    <li>
-                                        <a href="contactoCliente.jsp" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
-                block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Contacto</a>
-                                    </li>
+                                    <c:if test="${sessionScope.usuario=='CLIENTE'}">
+                                        <li>
+                                            <a href="contactoCliente.jsp" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                        block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Contacto</a>
+                                        </li>
+                                    </c:if>
                                     <li>
                                         <a href="#acercaDe" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
-                block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0" style="white-space: nowrap;">Acerca de</a>
+                    block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0" style="white-space: nowrap;">Acerca de</a>
                                     </li>
                                     <li>
                                         <span class="uppercase text-bold text-indigo-700 border-b border-gray-100 md:hover:bg-transparent md:border-0 
-                block pl-3 pr-4 py-2 md:p-0" style="white-space: nowrap;">
+                    block pl-3 pr-4 py-2 md:p-0" style="white-space: nowrap;">
                                             <c:if test="${not empty sessionScope.usuario}">${sessionScope.usuario}
                                             </c:if>
                                         </span>
@@ -149,9 +263,9 @@
                                     <li>
                                         <form action="ServletLogout" method="post">
                                             <button type="submit" class="text-red-600 font-semibold rounded-md 
-                                                 hover:text-red-400
-                                                 block pl-3 pr-4 py-2 md:p-0 w-full h-full"
-                                                style="white-space: nowrap;">Cerrar sesiÛn
+                                                     hover:text-red-400
+                                                     block pl-3 pr-4 py-2 md:p-0 w-full h-full"
+                                                style="white-space: nowrap;">Cerrar sesi√≥n
                                             </button>
                                         </form>
                                     </li>
@@ -161,7 +275,6 @@
                     </nav>
                 </div>
     </section>
-
     <!--section 2-->
     <section class="w-full bg-white flex justify-center mt-10">
         <div class="max-w-3xl mx-auto px-0 py-6 justify-center">
@@ -238,7 +351,7 @@
                                 class="flex flex-col px-4 py-2 sm:table-cell sm:py-4 lg:table-cell before:content-[attr(data-label)] sm:before:content-none before:text-[0.625rem] before:uppercase before:font-medium sm:pr-6">
                                 <a href="#"
                                     class="bg-indigo-500 dark:bg-indigo-900/50 hover:bg-indigo-100 sm:hover:bg-transparent content-center
-            sm:bg-transparent py-2.5 px-3.5 sm:py-0 sm:px-0 rounded-md sm:rounded-none text-indigo-600 dark:text-indigo-900
+            sm:bg-transparent py-2.5 px-3.5 sm:py-0 sm:px-0 rounded-md sm:rounded-none text-indigo-700 dark:text-indigo-900
              shadow-sm sm:shadow-none text-center sm:text-center
             underline-offset-4 dark:text-indigo-900 hover:underline hover:text-indigo-800 hover:dark:text-indigo-400">Observaciones</a>
                             </td>

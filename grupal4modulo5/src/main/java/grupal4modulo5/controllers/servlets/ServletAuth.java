@@ -26,21 +26,33 @@ public class ServletAuth extends HttpServlet {
 
 		String usuario = request.getParameter("nombreUsuario");
 		String password = request.getParameter("claveUsuario");
-
+		String tipoUsuario = "";
+		boolean validarUsuario = false;
 		RequestDispatcher requestDispatcher;
+		String usuarioIncorrecto = "";
+		HttpSession session = request.getSession();
 
-		if (usuario.equals("admin") && password.equals("1234")) {
-			HttpSession session = request.getSession();
-
-			session.setAttribute("usuario", usuario); // le acabo de añadir un atributo adicional a la session que es el
-														// nombre usuario
-			response.sendRedirect("home.jsp");
-			// requestDispatcher = request.getRequestDispatcher("home.jsp");
-
-		} else {
-			response.sendRedirect("login.jsp");
-			// requestDispatcher = request.getRequestDispatcher("login.jsp");
+		while (!validarUsuario) {
+			if (usuario.equals("cliente") && password.equals("1234")) {
+				tipoUsuario = "CLIENTE";
+				validarUsuario = true;
+				session.setAttribute("usuario", tipoUsuario);
+				response.sendRedirect("home.jsp");
+			} else if (usuario.equals("admin") && password.equals("1234")) {
+				tipoUsuario = "ADMINISTRATIVO";
+				validarUsuario = true;
+				session.setAttribute("usuario", tipoUsuario);
+				response.sendRedirect("home.jsp");
+			} else if (usuario.equals("profesional") && password.equals("1234")) {
+				tipoUsuario = "PROFESIONAL";
+				validarUsuario = true;
+				session.setAttribute("usuario", tipoUsuario);
+				response.sendRedirect("home.jsp");
+			} else {
+				usuarioIncorrecto = "Usuario no encontrado! intente nuevamente.";
+				response.sendRedirect("login.jsp");
+				break;
+			}
 		}
-		// requestDispatcher.forward(request, response);
 	}
 }
