@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import grupal5modulo5.controllers.CapacitacionController;
+
 /**
  * @author Aldo Pino, Sebastian Hernandez, Freddy Yevenes, Nestor Leyton Servlet
  *         implementation class ServletCapacitacion
@@ -16,22 +18,20 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletListarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public ServletListarCapacitacion() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		CapacitacionController capacitacionController = new CapacitacionController();
+		System.out.println("Servlet Listar Capacitacion inside");
+
+		request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
+		getServletContext().getRequestDispatcher("/listarCapacitacion.jsp").forward(request, response);
 	}
 
 	/**
@@ -41,20 +41,6 @@ public class ServletListarCapacitacion extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		String nombreCapacitacion = request.getParameter("nombreCapacitacion");
-		String idCapacitacion = request.getParameter("idCapacitacion");
-		String diaCapacitacion = request.getParameter("diaCapacitacion");
-		String horaCapacitacion = request.getParameter("horaCapacitacion");
-		String lugarCapacitacion = request.getParameter("lugarCapacitacion");
-		String duracionCapacitacion = request.getParameter("duracionCapacitacion");
-		String cantidadAsistentes = request.getParameter("cantidadAsistentes");
-		String observacionesCapacitacion = request.getParameter("observacionesCapacitacion");
-
-		System.out.println(nombreCapacitacion + " " + idCapacitacion + " " + diaCapacitacion + horaCapacitacion + " "
-				+ lugarCapacitacion + " " + duracionCapacitacion + " " + cantidadAsistentes + "\n"
-				+ observacionesCapacitacion);
-
+		doGet(request, response);
 	}
-
 }

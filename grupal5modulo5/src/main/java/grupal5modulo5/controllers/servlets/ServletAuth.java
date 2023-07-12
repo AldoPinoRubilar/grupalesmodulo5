@@ -35,12 +35,20 @@ public class ServletAuth extends HttpServlet {
 		String password = request.getParameter("password");
 		// System.out.println(username);
 		String result = loginUserController.login(username, password);
-
+		String tipoUsuario = "";
+		
 		if (!result.equals("false")) {
+			    if (username.equals("cliente")) {
+			        tipoUsuario = "CLIENTE";
+			    } else if (username.equals("admin")) {
+			        tipoUsuario = "ADMIN";
+			    } else if (username.equals("profesional")) {
+			        tipoUsuario = "PROFESIONAL";
+			        }
 			// guardamos las credenciales
 			guardarCredenciales(username, password, response);
 			HttpSession session = request.getSession();
-			session.setAttribute("usuario", username);
+			session.setAttribute("usuario", tipoUsuario);
 		}
 		response.setContentType("text/html; charset-UTF-8");
 		PrintWriter out = response.getWriter();
@@ -52,7 +60,7 @@ public class ServletAuth extends HttpServlet {
 	private void guardarCredenciales(String username, String password, HttpServletResponse response) {
 		// aqui voy a crear la cookie
 
-		Cookie cookie = new Cookie("credenciales", username); // ven algo de malo
+		Cookie cookie = new Cookie("credenciales", username);
 		cookie.setMaxAge(1000); // la edad la cookie "el tiempo que va durar"
 		response.addCookie(cookie);
 

@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
+<head>
+	<title>LOGIN | Asesorias Grupo 3.</title>
+	<jsp:include page="header.jsp"/>
+    </head>
+    
+    <script>
+    alert("Los Usuarios Disponibles para iniciar sesion:\n- user: cliente, clave: 1234\n- user: profesional, clave: 1234\n- user: admin, clave: 1234");
+    </script>    
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>LOGIN | ASESORIAS GRUPO 3</title>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-	</head>
+	<body>    
 
-	<body>
 		<section class="w-full px-8 text-gray-700 bg-white">
 			<div
 				class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl justify-center">
@@ -73,8 +74,7 @@
 						<div class="w-full md:w-1/2">
 							<div class="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl"
 								data-aos="fade-left" data-aos-duration="2000">
-								<img
-									src="https://i.postimg.cc/gkR2SH03/imgLogin.jpg">
+								<img src="img/imgLogin.jpg">
 							</div>
 						</div>
 					</div>
@@ -86,8 +86,8 @@
 			<span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span
 					class="text-indigo-600"> GRUPO 3</span></span>
 		</a>
-		<!-- <script src="js/script.js"></script> -->
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/script.js"></script>
 		<script src="js/app.js"></script>
 		<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 		</body>

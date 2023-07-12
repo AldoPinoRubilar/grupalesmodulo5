@@ -7,8 +7,8 @@ public class DBConnection {
 
 	private static final String DB = "asesorias_db";
 	private static final String PORT = "3306";
-	private static final String LOGIN = "root";
-	private static final String PASSWORD = "FullStack2023";
+	private static final String LOGIN = "adminasesorias";
+	private static final String PASSWORD = "Asesorias123";
 	private static final String URL_CONEXION = "jdbc:mysql://localhost:" + PORT + "/" + DB;
 	// jdbc:mysql://localhost:3306/asesorias_db
 

@@ -11,12 +11,13 @@ package grupal5modulo5.models.entitys;
  */
 public class Capacitacion {
 
-	private Long identificador;
+	private String nombreCapacitacion;
+	private String id;
 	private String rutCliente;
 	private String dia;
 	private String hora;
 	private String lugar;
-	private String origen;
+	private String duracion;
 	private int cantidadAsistentes;
 
 	// constructor vacio
@@ -24,25 +25,36 @@ public class Capacitacion {
 	}
 
 	// constructor con parametros aptos para nuevos datos
-	public Capacitacion(Long identificador, String rutCliente, String dia, String hora, String lugar, String origen,
-			int cantidadAsistentes) {
 
-		this.identificador = identificador;
+	public Capacitacion(String nombreCapacitacion, String id, String rutCliente, String dia, String hora, String lugar, String duracion,
+			int cantidadAsistentes) {
+		
+		this.nombreCapacitacion = nombreCapacitacion;
+		this.id = id;
 		this.rutCliente = rutCliente;
 		this.dia = dia;
 		this.hora = hora;
 		this.lugar = lugar;
-		this.origen = origen;
+		this.duracion = duracion;
 		this.cantidadAsistentes = cantidadAsistentes;
 	}
 
 	// getters and setters
-	public Long getIdentificador() {
-		return identificador;
+	public String getNombreCapacitacion() {
+		return nombreCapacitacion;
 	}
 
-	public void setIdentificador(Long identificador) {
-		this.identificador = identificador;
+	public void setNombreCapacitacion(String nombreCapacitacion) {
+		this.nombreCapacitacion = nombreCapacitacion;
+	}
+
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getRutCliente() {
@@ -77,12 +89,12 @@ public class Capacitacion {
 		this.lugar = lugar;
 	}
 
-	public String getOrigen() {
-		return origen;
+	public String getDuracion() {
+		return duracion;
 	}
 
-	public void setOrigen(String origen) {
-		this.origen = origen;
+	public void setDuracion(String duracion) {
+		this.duracion = duracion;
 	}
 
 	public int getCantidadAsistentes() {
@@ -96,8 +108,8 @@ public class Capacitacion {
 	// metodo utilizado para desplegar los datos por pantalla
 	@Override
 	public String toString() {
-		return "Capacitacion [identificador=" + identificador + ", rutCliente=" + rutCliente + ", dia=" + dia
-				+ ", hora=" + hora + ", lugar=" + lugar + ", origen=" + origen + ", cantidadAsistentes="
+		return "Capacitacion [identificador=" + id + ", rutCliente=" + rutCliente + ", dia=" + dia
+				+ ", hora=" + hora + ", lugar=" + lugar + ", duracion=" + duracion + ", cantidadAsistentes="
 				+ cantidadAsistentes + "]";
 	}
 
