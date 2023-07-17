@@ -24,7 +24,7 @@ public class FilterAuth implements Filter {
 		HttpSession session = request.getSession(false);
 
 		if (session == null || session.getAttribute("usuario") == null) {
-			response.sendRedirect(request.getContextPath() + "/login.jsp"); // lo mando a que inicie su session
+			response.sendRedirect(request.getContextPath() + "/ServletLogin"); // lo mando a que inicie su session
 		} else {
 			chain.doFilter(req, resp); // el usuario autentificado, continua con su solicitud que seria ir hacia el
 										// home

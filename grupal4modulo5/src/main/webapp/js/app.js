@@ -1,11 +1,9 @@
 //* vamos a implemetar Jquery
 $(document).ready(function() {
-	
   $("#form-login").submit(function(event) {
     event.preventDefault();
     authUser();
   });
-  
 });
 
 //* la funcion Auth() 
@@ -32,5 +30,26 @@ function authUser() {
       }
     }
   });
+  
+  // $.ajax({
+  //   type: "POST",
+  //   contentType: "application/json",
+  //   url: "./ServletAuth",
+  //   data: JSON.stringify({
+  //     username: userName,
+  //     password: passWord
+  //   }),
+  //   success: function(result) {
+  //     let parsedResult = JSON.parse(result);
+  //     console.log(parsedResult)
+  //     //* retornar un false
+  //     if(parsedResult != false) {
+  //       let username = parsedResult['username'];
+  //       document.location.href = "home.jsp?username="+username;
+  //     }
+  //   }
+  // });
+ 
+
 }
 

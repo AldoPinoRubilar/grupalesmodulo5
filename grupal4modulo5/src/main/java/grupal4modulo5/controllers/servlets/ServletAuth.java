@@ -37,20 +37,20 @@ public class ServletAuth extends HttpServlet {
 				tipoUsuario = "CLIENTE";
 				validarUsuario = true;
 				session.setAttribute("usuario", tipoUsuario);
-				response.sendRedirect("home.jsp");
+				response.sendRedirect("ServletHome");
 			} else if (usuario.equals("admin") && password.equals("1234")) {
 				tipoUsuario = "ADMINISTRATIVO";
 				validarUsuario = true;
 				session.setAttribute("usuario", tipoUsuario);
-				response.sendRedirect("home.jsp");
+				response.sendRedirect("ServletHome");
 			} else if (usuario.equals("profesional") && password.equals("1234")) {
 				tipoUsuario = "PROFESIONAL";
 				validarUsuario = true;
 				session.setAttribute("usuario", tipoUsuario);
-				response.sendRedirect("home.jsp");
+				response.sendRedirect("ServletHome");
 			} else {
 				usuarioIncorrecto = "Usuario no encontrado! intente nuevamente.";
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("ServletLogin");
 				break;
 			}
 		}

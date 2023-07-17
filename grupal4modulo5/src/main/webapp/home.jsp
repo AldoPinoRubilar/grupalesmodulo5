@@ -22,7 +22,7 @@
         <div
             class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl justify-center">
             <div class="relative flex flex-col md:flex-row">
-                <a href="home.jsp"
+                <a href="ServletHome"
                     class="flex items-center mb-9 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
                     <span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span
                             class="text-indigo-600"> GRUPO 3</span></span>
@@ -75,7 +75,7 @@
                                                 <!--FUNCIONES LISTAR CLIENTE-->
                                                 <c:if test="${sessionScope.usuario=='CLIENTE'}">
                                                     <li>
-                                                        <a href="listarCapacitacion.jsp" name="listarCapacitacion"
+                                                        <a href="ServletListarCapacitacion" name="listarCapacitacion"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                            Listado de Capacitaciones
                                                         </a>
@@ -85,13 +85,13 @@
                                                 <!--FUNCIONES LISTAR PROFESIONAL-->
                                                 <c:if test="${sessionScope.usuario=='PROFESIONAL'}">
                                                 <li>
-                                                    <a href="sitioEnDesarrollo.jsp" name="listarAsesorias"
+                                                    <a href="ServletSitioEnDesarrollo" name="listarAsesorias"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                        Listado de Asesorias
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="sitioEnDesarrollo.jsp" name="listarVisitas"
+                                                    <a href="ServletSitioEnDesarrollo" name="listarVisitas"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                        Listado de Visitas
                                                     </a>
@@ -101,13 +101,13 @@
                                                 <!--FUNCIONES LISTAR ADMIN--->
                                             <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
                                                 <li>
-                                                    <a href="listarUsuarios.jsp" name="listarUsuarios"
+                                                    <a href="ServletListarUsuarios" name="listarUsuarios"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                        Listado de Usuarios
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="sitioEnDesarrollo.jsp" name="listarPagos"
+                                                    <a href="ServletSitioEnDesarrollo" name="listarPagos"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                        Listado de Pagos
                                                     </a>
@@ -135,7 +135,7 @@
                                                 <!--FUNCIONES CREAR 'CLIENTE'-->
                                                 <c:if test="${sessionScope.usuario=='CLIENTE'}">
                                                     <li>
-                                                        <a href="crearCapacitacion.jsp" name="crearCapacitacion"
+                                                        <a href="ServletCrearCapacitacion" name="crearCapacitacion"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Crear Capacitación
                                                         </a>
@@ -145,7 +145,7 @@
                                                 <!--FUNCIONES CREAR 'PROFESIONAL'-->
                                                 <c:if test="${sessionScope.usuario=='PROFESIONAL'}">
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="crearAsesorias"
+                                                        <a href="ServletSitioEnDesarrollo" name="crearAsesorias"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Crear Asesorias
                                                         </a>
@@ -155,13 +155,13 @@
                                                 <!--FUNCIONES CREAR 'ADMIN'-->
                                                 <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
                                                 <li>
-                                                    <a href="crearUsuario.jsp" name="crearUsuario"
+                                                    <a href="ServletCrearUsuario" name="crearUsuario"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                         Crear Usuario
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="sitioEnDesarrollo.jsp" name="crearPago"
+                                                    <a href="ServletSitioEnDesarrollo" name="crearPago"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                         Crear Pago
                                                     </a>
@@ -190,12 +190,12 @@
                                                 <!--FUNCIONES GEST/ADMIN 'CLIENTE'-->
                                                 <c:if test="${sessionScope.usuario=='CLIENTE'}">
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="adminAsistentes"
+                                                        <a href="ServletSitioEnDesarrollo" name="adminAsistentes"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Administrar Asistentes</a>
                                                     </li>
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="gestAccidentes"
+                                                        <a href="ServletSitioEnDesarrollo" name="gestAccidentes"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Gestionar Accidentes</a>
                                                     </li>
@@ -204,12 +204,12 @@
                                                 <!--FUNCIONES GEST/ADMIN 'PROFESIONAL'-->
                                                 <c:if test="${sessionScope.usuario=='PROFESIONAL'}">
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="responderCheckList"
+                                                        <a href="ServletSitioEnDesarrollo" name="responderCheckList"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Responder CheckList</a>
                                                     </li>
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="reportes"
+                                                        <a href="ServletSitioEnDesarrollo" name="reportes"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Reportes</a>
                                                     </li>
@@ -218,22 +218,22 @@
                                                 <!--FUNCIONES GEST/ADMIN 'ADMIN'-->
                                                 <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="editarAdministrativo"
+                                                        <a href="ServletSitioEnDesarrollo" name="editarAdministrativo"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Editar Administrativo</a>
                                                     </li>
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="editarCliente"
+                                                        <a href="ServletSitioEnDesarrollo" name="editarCliente"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Editar Cliente</a>
                                                     </li>
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="editarProfesional"
+                                                        <a href="ServletSitioEnDesarrollo" name="editarProfesional"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Editar Profesional</a>
                                                     </li>
                                                     <li>
-                                                        <a href="sitioEnDesarrollo.jsp" name="adminChequeos"
+                                                        <a href="ServletSitioEnDesarrollo" name="adminChequeos"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
                                                             Administrar Chequeos</a>
                                                     </li>
@@ -243,7 +243,7 @@
                                     </li>
                                     <c:if test="${sessionScope.usuario=='CLIENTE'}">
                                         <li>
-                                            <a href="contactoCliente.jsp" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                                            <a href="ServletContacto" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
                         block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Contacto</a>
                                         </li>
                                     </c:if>
@@ -532,4 +532,3 @@
 </body>
 
 </html>
-    </html>
