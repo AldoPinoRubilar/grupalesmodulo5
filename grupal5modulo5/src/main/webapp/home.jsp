@@ -4,7 +4,7 @@
 <head>
 	<title>INICIO | Asesorias Grupo 3.</title>
 	<jsp:include page="header.jsp"/>
-	</head>
+</head>
 <body>
 
     <!-- Section 1 -->

@@ -21,15 +21,14 @@ public class ServletCrudCapacitacion extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
+
 		String option = request.getParameter("option");
 		// creo la instancia del controlador
 		CapacitacionController capacitacionController = new CapacitacionController();
 
 		switch (option) {
 		case "saveCapacitacion": {
-			
+
 			String nombreCapacitacion = request.getParameter("nombreCapacitacion");
 			String id = request.getParameter("id");
 			String rutcliente = request.getParameter("rutCliente");
@@ -38,12 +37,12 @@ public class ServletCrudCapacitacion extends HttpServlet {
 			String lugar = request.getParameter("lugarCapacitacion");
 			String duracion = request.getParameter("duracionCapacitacion");
 			int cantidadAsistentes = Integer.parseInt(request.getParameter("cantidadAsistentes"));
-			
-			Capacitacion newCapacitacion = new Capacitacion(nombreCapacitacion, id, rutcliente, dia, hora, lugar, duracion,
-					cantidadAsistentes);
-			
-			//Registro de capacitacion a la base de datos.
-			capacitacionController.saveCapacitacion(newCapacitacion);		
+
+			Capacitacion newCapacitacion = new Capacitacion(nombreCapacitacion, id, rutcliente, dia, hora, lugar,
+					duracion, cantidadAsistentes);
+
+			// Registro de capacitacion a la base de datos.
+			capacitacionController.saveCapacitacion(newCapacitacion);
 			response.sendRedirect("ServletListarCapacitacion");
 			break;
 		}
@@ -60,7 +59,7 @@ public class ServletCrudCapacitacion extends HttpServlet {
 			// llamar al controlador
 			Capacitacion capacitacion = capacitacionController.findCapacitacionById(idFormCapacitacion); // ya tenemos
 																											// al
-			
+
 			request.setAttribute("capacitaciones", capacitacion);
 			response.sendRedirect("ServletListarCapacitacion");
 			break;
@@ -77,11 +76,11 @@ public class ServletCrudCapacitacion extends HttpServlet {
 			String duracion = request.getParameter("duracion");
 			int cantidadAsistentes = Integer.parseInt(request.getParameter("cantidadAsistentes"));
 
-			Capacitacion updateCapacitacion = new Capacitacion(nombreCapacitacion, id, rutcliente, dia, hora, lugar, duracion,
-					cantidadAsistentes);
+			Capacitacion updateCapacitacion = new Capacitacion(nombreCapacitacion, id, rutcliente, dia, hora, lugar,
+					duracion, cantidadAsistentes);
 			// llamar al controlador
 			capacitacionController.updateCapacitacion(updateCapacitacion);
-			
+
 			request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
 			response.sendRedirect("ServletListarCapacitacion");
 			break;
@@ -92,7 +91,7 @@ public class ServletCrudCapacitacion extends HttpServlet {
 
 		}
 		// fin switch
-		//request.getRequestDispatcher(url).forward(request, response);
+		// request.getRequestDispatcher(url).forward(request, response);
 
 	}
 

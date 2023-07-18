@@ -1,6 +1,19 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-     <section id="navBarCompleto" class="w-full px-8 text-gray-700 bg-gradient-to-tl from-indigo-100 to-white">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<!DOCTYPE html>
+	<html>
+
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CREAR CAPACITACION | ASESORIAS GRUPO 3</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+	</head>
+
+	<body>
+
+        <!-- Section 1 -->
+     <section id="navBarCompleto" class="w-full px-8 text-gray-700 bg-white bg-gradient-to-tl from-indigo-100 to-white">
         <div
             class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl justify-center">
             <div class="relative flex flex-col md:flex-row">
@@ -37,6 +50,10 @@
                             <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
                                 <ul
                                     class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+                                    <li>
+                                        <a href="ServletHome" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 
+                    block pl-3 pr-4 py-2 md:hover:text-indigo-700 md:p-0">Inicio</a>
+                                    </li>
                                     <li>
                                         <button id="dropdownNavbarLink" name="menuListar"
                                             data-dropdown-toggle="dropdownNavbar"
@@ -81,7 +98,7 @@
                                                 </c:if>
                                                 <!--FIN FUNCIONES LISTAR PROFESIONAL-->
                                                 <!--FUNCIONES LISTAR ADMIN--->
-                                            <c:if test="${sessionScope.usuario=='ADMIN'}">
+                                            <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
                                                 <li>
                                                     <a href="ServletListarUsuarios" name="listarUsuarios"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
@@ -117,9 +134,9 @@
                                                 <!--FUNCIONES CREAR 'CLIENTE'-->
                                                 <c:if test="${sessionScope.usuario=='CLIENTE'}">
                                                     <li>
-                                                        <a href="ServletCrearYActualizarCapacitacion" name="crearCapacitacion"
+                                                        <a href="ServletCrearCapacitacion" name="crearCapacitacion"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
-                                                            Crear Capacitaci&oacute;n
+                                                            Crear Capacitación
                                                         </a>
                                                     </li>
                                                 </c:if>
@@ -135,7 +152,7 @@
                                                 </c:if>
                                                 <!--FIN FUNCIONES CREAR 'PROFESIONAL'-->
                                                 <!--FUNCIONES CREAR 'ADMIN'-->
-                                                <c:if test="${sessionScope.usuario=='ADMIN'}">
+                                                <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
                                                 <li>
                                                     <a href="ServletCrearUsuario" name="crearUsuario"
                                                         class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
@@ -198,7 +215,7 @@
                                                 </c:if>
                                                 <!--FIN FUNCIONES GEST/ADMIN 'PROFESIONAL'-->
                                                 <!--FUNCIONES GEST/ADMIN 'ADMIN'-->
-                                                <c:if test="${sessionScope.usuario=='ADMIN'}">
+                                                <c:if test="${sessionScope.usuario=='ADMINISTRATIVO'}">
                                                     <li>
                                                         <a href="ServletSitioEnDesarrollo" name="editarAdministrativo"
                                                             class="text-sm hover:bg-gray-50 text-indigo-700 hover:text-teal-600 block px-4 py-2">
@@ -245,7 +262,7 @@
                                             <button type="submit" class="text-red-600 font-semibold rounded-md 
                                                      hover:text-red-400
                                                      block pl-3 pr-4 py-2 md:p-0 w-full h-full"
-                                                style="white-space: nowrap;">Cerrar sesi&oacute;n
+                                                style="white-space: nowrap;">Cerrar sesión
                                             </button>
                                         </form>
                                     </li>
@@ -255,3 +272,82 @@
                     </nav>
                 </div>
     </section>
+		<!--Section 2-->
+		<section id="CrearUsuario" class="w-full px-8 text-gray-700 bg-white">
+			<div class="max-w-screen-md mx-auto p-5">
+				<div class="text-center mb-10">
+					<h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+						Crear Nuevo<span class="text-indigo-600"> Usuario</span>
+					</h3>
+				</div>
+
+				<!-- Formulario -->
+				<form class="w-full" action="ServletCrudUsuario" method="POST" id="saveUser">
+					<div class="flex flex-wrap -mx-3 mb-6 mt-0">
+						<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+								for="grid-nombre"> Nombre </label>
+							<input name="nombreusuario"
+								class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+								id="nombreusuario" type="text" placeholder="Isabella González">
+							<p class="hidden text-red-500 text-xs italic"></p>
+						</div>
+
+						<div class="w-full md:w-1/2 px-3">
+							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+								for="grid-rut"> Rut </label>
+							<input name="run"
+								class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+								id="rut" type="text" placeholder="12.345.678-9">
+							<p class="hidden text-red-500 text-xs italic"></p>
+						</div>
+
+						<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+								for="grid-fecha-nacimiento"> Fecha Nacimiento </label>
+							<input type="date" name="fechanacimiento"
+								class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+								id="fechanacimiento">
+							<p class="hidden text-red-500 text-xs italic"></p>
+						</div>
+
+
+						<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+							<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+								for="grid-tipo-usuario"> Tipo de usuario </label>
+							<select name="tipousuario"
+								class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+								id="tipousuario">
+								<option value="" disabled selected>Seleccione el tipo de
+									usuario</option>
+								<option value="cliente">Cliente</option>
+								<option value="profesional">Profesional</option>
+								<option value="administrativo">Administrativo</option>
+							</select>
+							<p class="hidden text-red-500 text-xs italic"></p>
+						</div>
+					</div>
+					<div class="flex flex-wrap -mx-3 mb-6">
+						<input type="hidden" name="option" value="saveUser">
+						<div class="flex justify-center w-full px-3 mt-5">
+							<button id="btnSubmit"
+								class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+								type="submit">Crear Usuario</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<a href="ServletHome"
+			class="flex items-center mb-19 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
+			<span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span
+					class="text-indigo-600"> GRUPO 3</span></span>
+		</a>
+
+		<script src="js/script.js"></script>
+		<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+
+	</body>
+
+	</html>

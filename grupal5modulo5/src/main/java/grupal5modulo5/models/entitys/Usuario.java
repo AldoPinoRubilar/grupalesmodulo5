@@ -12,31 +12,49 @@ package grupal5modulo5.models.entitys;
 
 public class Usuario {
 
+	private String id;
 	private String run;
 	private String nombre;
 	private String fechaNacimiento;
-	private String observaciones;
+	private String tipoUsuario;
 
 	// Constructor vacio
 	public Usuario() {
 
 	}
 
-	// constructor con parametros aptos para nuevos datos
-	public Usuario(String run, String nombre, String fechaNacimiento, String observaciones) {
+	public Usuario(String run, String nombre, String fechaNacimiento, String tipoUsuario) {
 		super();
 		this.run = run;
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
-		this.observaciones = observaciones;
+		this.tipoUsuario = tipoUsuario;
+	}
+
+	// constructor con parametros aptos para nuevos datos
+	public Usuario(String id, String run, String nombre, String fechaNacimiento, String tipoUsuario) {
+		super();
+		this.id = id;
+		this.run = run;
+		this.nombre = nombre;
+		this.fechaNacimiento = fechaNacimiento;
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	// getters and setters
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getRun() {
 		return run;
 	}
 
-	public void setRut(String run) {
+	public void setRun(String run) {
 		this.run = run;
 	}
 
@@ -56,18 +74,18 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getObservaciones() {
-		return observaciones;
+	public String getTipoUsuario() {
+		return tipoUsuario;
 	}
 
-	public void setObservaciones(String observaciones) {
-		this.observaciones = observaciones;
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	// metodo utilizado para desplegar los datos por pantalla
 	@Override
 	public String toString() {
-		return "Usuario [run=" + run + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento
-				+ ", observaciones=" + observaciones + "]";
+		return "Usuario [id=" + id + ", run=" + run + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento
+				+ ", tipoUsuario=" + tipoUsuario + "]";
 	}
 }

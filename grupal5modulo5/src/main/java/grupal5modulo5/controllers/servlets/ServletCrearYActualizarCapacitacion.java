@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CrearYActualizarCapacitacion
  */
-@WebServlet("/CrearYActualizarCapacitacion")
-public class CrearYActualizarCapacitacion extends HttpServlet {
+@WebServlet("/ServletCrearYActualizarCapacitacion")
+public class ServletCrearYActualizarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public CrearYActualizarCapacitacion() {
+	public ServletCrearYActualizarCapacitacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

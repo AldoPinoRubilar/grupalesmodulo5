@@ -10,7 +10,7 @@
         <!--Section 1-->
        <jsp:include page="navbar.jsp"/>
 <!--Section 2-->
-<section id="crearCapacitacion.jsp" class="w-full px-8 text-gray-700 bg-white">
+<section id="crearCapacitacion" class="w-full px-8 text-gray-700 bg-white">
 		<div class="max-w-screen-md mx-auto p-5">
 			<div class="text-center mb-10">
 				<h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
@@ -98,7 +98,7 @@
 				<div class="flex flex-wrap -mx-3 mb-6">
 					<input type="hidden" name="option" value="saveCapacitacion">
 					<div class="flex justify-center w-full px-3 mt-5">
-						<button id="btnSubmit" class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
+						<button id="btnSubmitCrearCapacitacion" class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
 							Crear Capacitación
 						</button>
 					</div>

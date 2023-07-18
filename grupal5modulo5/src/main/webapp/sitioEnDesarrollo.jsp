@@ -8,7 +8,7 @@
 	</head>
 <body>
 
-   <jsp:include page="navbar.jsp"/>
+   <!--<jsp:include page="navbar.jsp"/>-->
 <!--Section 2-->
     <section class="bg-white px-8">
         <div class="container mx-auto max-w-screen-md p-5">
@@ -33,7 +33,7 @@
     <a href="ServletHome" class="flex items-center mb-19 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
         <span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span class="text-indigo-600"> GRUPO 3</span></span>
     </a>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 </body>
 </html>
