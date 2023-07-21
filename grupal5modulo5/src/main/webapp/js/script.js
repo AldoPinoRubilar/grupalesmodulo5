@@ -12,13 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const cantidadAsistentesInput = document.getElementById('cantidadAsistentes');
     const btnSubmitCrearCapacitacion = document.getElementById('btnSubmitCrearCapacitacion');
 
-    // Obtener referencias a los elementos del formulario Usuario
-    const formUsuario = document.getElementById('saveUsuario');
-    const nombreUsuarioInput = document.getElementById("nombreUsuario");
-    const fechaNacimientoInput = document.getElementById("fechaNacimiento");
-    const rutUsuarioInput = document.getElementById("rutUsuario");
-    const btnSubmitCrearUsuario = document.getElementById('btnSubmitCrearUsuario');
-
     // Agregar evento de escucha para el envío del formulario Capacitacion
     formCapacitacion.addEventListener('submit', function (event) {
         // Verificar la validez de cada campo
@@ -78,42 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
             isValid = false;
         } else {
             hideErrorMessage(cantidadAsistentesInput);
-        }
-
-        // Deshabilitar el envío del formulario si no es válido
-        if (!isValid) {
-            event.preventDefault();
-        }
-    });
-
-    // Agregar evento de escucha para el envío del formulario Cliente
-    formUsuario.addEventListener('submit', function (event) {
-        // Verificar la validez de cada campo
-        let isValid = true;
-
-        // Validación del campo Nombre
-        if (nombreUsuarioInput.value.trim().length < 10 || nombreUsuarioInput.value.trim().length > 50) {
-            showErrorMessage(nombreUsuarioInput, 'El campo Nombre debe tener entre 10 y 50 caracteres.');
-            isValid = false;
-        } else {
-            hideErrorMessage(nombreUsuarioInput);
-        }
-
-        // Validación del campo Fecha de Nacimiento
-        if (!/^(\d{2})\/(\d{2})\/(\d{4})$/.test(fechaNacimientoInput.value)) {
-            showErrorMessage(fechaNacimientoInput, 'El campo Fecha de Nacimiento debe tener el formato DD/MM/AAAA.');
-            isValid = false;
-        } else {
-            hideErrorMessage(fechaNacimientoInput);
-        }
-
-        // Validación del campo RUN
-        const rutValue = rutUsuarioInput.value.replace(/\./g, '').replace('-', ''); // Eliminar puntos y guiones
-        if (isNaN(parseInt(rutValue)) || parseInt(rutValue) >= 100000000) {
-            showErrorMessage(rutUsuarioInput, 'El campo RUN debe ser un número menor a 99.999.999.');
-            isValid = false;
-        } else {
-            hideErrorMessage(rutUsuarioInput);
         }
 
         // Deshabilitar el envío del formulario si no es válido

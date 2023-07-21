@@ -371,7 +371,7 @@
 				<span class="mx-auto text-3xl font-black leading-none text-gray-900 select-none">ASESORIAS<span class="text-indigo-600"> GRUPO 3</span></span>
 			</a>
 
-			<script src="js/script.js"></script>
+			<script src="js/validacionCrearUsuario.js"></script>
 			<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
 		</body>
 
